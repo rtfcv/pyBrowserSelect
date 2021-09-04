@@ -20,7 +20,7 @@ python setup.py install
 Default installation location is `%HOMEPATH%\AppData\Local\pyBrowserSelection\bin`
 
 If you would like to set this program as a default browser, you
-will need to additionary write some key/value-s to the registry
+will need to additionary write some key/value-s to the registry.
 Sample configuration is in `regentries-sample.reg`.
 Make sure you edit the content to suite your system.
 Usually replacing `PATH_TO_YOUR_INSTALLATION_OF` to your actual
