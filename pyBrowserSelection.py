@@ -13,7 +13,9 @@ if (__name__ != '__main__'):
     print("Exiting...")
     exit(1)
 
-
+# begin config sections
+import confFile
+cfg = confFile.ConfFile('pyBrowserSelection', 'browsers.json')
 # I would rather not have these hard coded
 browser_dict = dict({
     'firefox':
@@ -23,6 +25,15 @@ browser_dict = dict({
     'edge':
         r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
 })
+
+try:
+    browser_dict = cfg.read('browserDict')
+except:
+    # write predefined defaults
+    browser_dict = cfg.pend_write('browserDict', browser_dict)
+    cfg.save_config()
+    pass
+# end config sections
 
 
 lgr = logging.getLogger()
